@@ -1,10 +1,36 @@
 from math import pow, sin, cos, tan, pi, floor, sqrt, isnan, atan2
 from fractions import Fraction
 """
+usage:  import MapUtils as MU
+
+        v_lat  =  53.16893
+		    v_long = -1.76163
+
+        c = MU.ConvertLatLongToXY(v_lat, v_long)
+		    print(c.OS())
+        # 'SK 16032 63561' Arbor Low
+
 author:	dave@bankside-computing.co.uk
 thanks: Chris Veness @ http://www.movable-type.co.uk/scripts/latlong.html
         I ported the 'maths' from a lot of this to python from his javascript.
+
+tests:     
+
+    def setUp(self):
+        self.c = MU.ConvertLatLongToXY(53.16893, -1.76163)  # Arbor Low
+
+    def test_ConvertLatLongToXY_E(self):
+        self.assertEqual(self.c.E(), 416032.3538031285)
+
+    def test_ConvertLatLongToXY_N(self):
+        self.assertEqual(self.c.N(), 363561.4399606167)
+
+    def test_ConvertLatLongToXY_OS(self):
+        self.assertEqual(self.c.OS(), 'SK 16032 63561')
+
+
 """
+
 def northingFromOSGrid(p_OSGridRef):
     """
     Takes an OS BNG reference and returns the northing from it.
