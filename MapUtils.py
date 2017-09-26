@@ -4,13 +4,13 @@ from fractions import Fraction
 usage:  import MapUtils as MU
 
         v_lat  =  53.16893
-		    v_long = -1.76163
+        v_long = -1.76163
 
         c = MU.ConvertLatLongToXY(v_lat, v_long)
 		    print(c.OS())
         # 'SK 16032 63561' Arbor Low
 
-author:	dave@bankside-computing.co.uk
+author: dave@bankside-computing.co.uk
 thanks: Chris Veness @ http://www.movable-type.co.uk/scripts/latlong.html
         I ported the 'maths' from a lot of this to python from his javascript.
 
